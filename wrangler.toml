@@ -1,0 +1,7 @@
+name = "digital-content-store"
+compatibility_date = "2023-09-18"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "digital_content_store"
+database_id = ""
