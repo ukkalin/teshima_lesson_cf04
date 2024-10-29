@@ -3,5 +3,5 @@ compatibility_date = "2023-09-18"
 
 [[d1_databases]]
 binding = "DB"
-database_name = "digital_content_store"
-database_id = ""
+database_name = "d1-teshima"
+database_id = "02e13536-e0b5-47c4-8e6f-96762282c2b3"

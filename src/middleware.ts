@@ -13,8 +13,10 @@ export const config = {
 export async function middleware(request: NextRequest) {
   const response = NextResponse.next();
 
-  // Cloudflare D1をバインドするためのヘッダーを追加
-  response.headers.set('x-d1-database', 'DB');
+  // Only add D1 header in production
+  if (process.env.NODE_ENV === 'production') {
+    response.headers.set('x-d1-database', 'DB');
+  }
 
   return response;
 }

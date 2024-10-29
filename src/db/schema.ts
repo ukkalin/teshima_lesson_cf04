@@ -1,3 +1,4 @@
+import { sql } from 'drizzle-orm';
 import { sqliteTable, text, integer } from 'drizzle-orm/sqlite-core';
 
 export const users = sqliteTable('users', {
@@ -32,3 +33,7 @@ export const purchases = sqliteTable('purchases', {
   stripeId: text('stripe_id').notNull().unique(),
   createdAt: integer('created_at', { mode: 'timestamp' }).notNull().default(sql`CURRENT_TIMESTAMP`)
 });
+
+export type User = typeof users.$inferSelect;
+export type Product = typeof products.$inferSelect;
+export type Purchase = typeof purchases.$inferSelect;
